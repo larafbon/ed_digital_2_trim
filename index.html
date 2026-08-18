@@ -29,8 +29,8 @@
 
             }
             img{
-                width: 130px;
-                height: 200px;
+                width: 200px;
+                height: 10-px;
 
             }
              .livro1{
@@ -50,41 +50,42 @@
         
         </header>
 
-        
+        <main>
+          <h2>Alguns livros...</h2>
+        </main>
       
         <main>
            <div>
           
-          <h2>Alguns livros...</h2>
+          
 
           </div>
         
-            <img src="ascronicasdenarnia.jpg" alt="Capa do livro As Crônicas de Nárnia de C. S. Lewis, edição de Volume Único. A imagem destaca o rosto em close-up de um leão majestoso, Aslan, com uma juba imponente feita de chamas estilizadas em tons de dourado, laranja e vermelho. O leão possui olhos azuis claros e expressivos. No topo da capa, o título As Crônicas de NÁRNIA está escrito em letras douradas, seguido pelo nome do autor C. S. LEWIS em branco e a etiqueta Volume Único logo abaixo. O fundo é escuro com arabescos sutis.">
+            <img src="nárnia.png" alt="Capa do livro As Crônicas de Nárnia de C. S. Lewis, edição de Volume Único. A imagem destaca o rosto em close-up de um leão majestoso, Aslan, com uma juba imponente feita de chamas estilizadas em tons de dourado, laranja e vermelho. O leão possui olhos azuis claros e expressivos. No topo da capa, o título As Crônicas de NÁRNIA está escrito em letras douradas, seguido pelo nome do autor C. S. LEWIS em branco e a etiqueta Volume Único logo abaixo. O fundo é escuro com arabescos sutis.">
         
         <div>
         
           <p class="livro1">
             As crônicas de nárnia</p>
           <button>❤️<span>0</span></button>
+          <button>📚​<span>0</span></button>
           
         </div>
 
-
-       
         </main>
     
 </body>
+
+
 <script>
-  const botao = document.querySelector("button");
-  botao.addEventListener("click", botaoClicado);
+  const botoes = document.querySelectorAll("button");
 
-  function botaoClicado(){
-    console.log("fui clicado");
-    let texto = botao.querySelector("span");
-    texto.textContent++;
-  }
+  botoes.forEach(function(botao) {
+    botao.addEventListener("click", function() {
+      console.log("fui clicado");
 
-  
+      const texto = botao.querySelector("span");
+      texto.textContent = Number(texto.textContent) + 1;
+    });
+  });
 </script>
-
-</html>
