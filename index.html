@@ -7,7 +7,7 @@
         <title>books</title>
         <style>
             header{
-                background-color: rgb(255, 217, 147);
+                background-color: rgb(231, 191, 116);
                 color: #694002;
                 text-align: center;
                 max-width: 800px;
@@ -20,17 +20,22 @@
            
           
             main{
-                background-color: #FFFFFF;
+                background-color: #fff2d5;
                 color: #694002;
                 max-width: 800px;
                 margin: 0 auto;
-                display: flex;
+                
 
+
+            }
+            article{
+
+              display: flex;
 
             }
             img{
                 width: 200px;
-                height: 10-px;
+                height: 300px;
 
             }
              .livro1{
@@ -52,27 +57,36 @@
 
         <main>
           <h2>Alguns livros...</h2>
-        </main>
-      
-        <main>
-           <div>
+       
+        <article>
+          <div>
           
+          <img src="narnia.jpeg" alt="Capa do livro As Crônicas de Nárnia de C. S. Lewis, edição de Volume Único. A imagem destaca o rosto em close-up de um leão majestoso, Aslan, com uma juba imponente feita de chamas estilizadas em tons de dourado, laranja e vermelho. O leão possui olhos azuis claros e expressivos. No topo da capa, o título As Crônicas de NÁRNIA está escrito em letras douradas, seguido pelo nome do autor C. S. LEWIS em branco e a etiqueta Volume Único logo abaixo. O fundo é escuro com arabescos sutis.">
+        
           
-
+            <p class="livro1">
+              As crônicas de nárnia</p>
+            <button>🦁​<span>0</span></button>
+            <button>📚​<span>0</span></button>
+            
           </div>
-        
-            <img src="nárnia.png" alt="Capa do livro As Crônicas de Nárnia de C. S. Lewis, edição de Volume Único. A imagem destaca o rosto em close-up de um leão majestoso, Aslan, com uma juba imponente feita de chamas estilizadas em tons de dourado, laranja e vermelho. O leão possui olhos azuis claros e expressivos. No topo da capa, o título As Crônicas de NÁRNIA está escrito em letras douradas, seguido pelo nome do autor C. S. LEWIS em branco e a etiqueta Volume Único logo abaixo. O fundo é escuro com arabescos sutis.">
-        
-        <div>
-        
-          <p class="livro1">
-            As crônicas de nárnia</p>
-          <button>❤️<span>0</span></button>
-          <button>📚​<span>0</span></button>
-          
-        </div>
 
-        </main>
+        </article>
+        
+        <article>
+          <div>
+            <img src="hobbit.jpeg" alt="Capa ilustrada do livro “O Hobbit”, de J. R. R. Tolkien. A imagem apresenta uma paisagem fantástica com montanhas pontiagudas, vales verdes, um rio e uma floresta em primeiro plano. O céu tem tons de bege e azul, com um sol vermelho ao centro e silhuetas de aves voando. No topo aparece o nome “J. R. R. Tolkien” e, ao centro, o título “O Hobbit”, em letras grandes brancas. Há inscrições estilizadas semelhantes a runas nas bordas superior e inferior da imagem.">
+          
+        
+          <p class="livro2">
+             O Hobbit</p>
+           <button>⛰️​<span>0</span></button>
+           <button>📚​<span>0</span></button>
+          
+          </div>
+        </article>
+
+      </main>
     
 </body>
 
@@ -80,12 +94,20 @@
 <script>
   const botoes = document.querySelectorAll("button");
 
-  botoes.forEach(function(botao) {
-    botao.addEventListener("click", function() {
-      console.log("fui clicado");
-
-      const texto = botao.querySelector("span");
-      texto.textContent = Number(texto.textContent) + 1;
-    });
-  });
+  botoes.forEach(function (botao) {
+    let curtiu = false;
+    botao.addEventListener("click", botaoClicado);
+    function botaoClicado() {
+        console.log("fui clicado");
+        let texto = botao.querySelector("span");
+        if (curtiu===false){
+          texto.textContent++;
+          curtiu = true
+        } else {
+          texto.textContent--;
+          curtiu = false;
+        }
+        
+    }
+})
 </script>
